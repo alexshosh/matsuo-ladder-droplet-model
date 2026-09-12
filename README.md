@@ -2,6 +2,8 @@
 
 Alex Shoshitaishvili, Independent Researcher
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22717388.svg)](https://doi.org/10.5281/zenodo.22717388)
+
 ## Summary
 
 Matsuo and Kurihara's peptide-coacervate system converts a disulfide precursor
@@ -38,6 +40,10 @@ pdflatex MatsuoLadderDropletModel.tex
 ```
 
 (A second pass resolves cross-references and citations.)
+
+## Citing this work
+
+See [`CITATION.cff`](CITATION.cff), or cite via the Zenodo DOI: [10.5281/zenodo.22717388](https://doi.org/10.5281/zenodo.22717388).
 
 ## License
 
