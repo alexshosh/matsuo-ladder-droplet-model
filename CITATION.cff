@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "A Mechanistic Model of Droplet Formation in Matsuo's Peptide-Coacervate System"
+authors:
+  - family-names: "Shoshitaishvili"
+    given-names: "Alex"
+    affiliation: "Independent Researcher"
+date-released: 2026-09-11
+license: CC-BY-4.0
+type: article
+repository-code: "https://github.com/alexshosh/matsuo-ladder-droplet-model"
+keywords:
+  - origin of life
+  - prebiotic chemistry
+  - peptide coacervate
+  - liquid-liquid phase separation
+  - reaction kinetics
+  - dimensionality reduction
