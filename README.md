@@ -2,7 +2,7 @@
 
 Alex Shoshitaishvili, Independent Researcher
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22717388.svg)](https://doi.org/10.5281/zenodo.22717388)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22717387.svg)](https://doi.org/10.5281/zenodo.22717387)
 
 ## Summary
 
@@ -43,7 +43,8 @@ pdflatex MatsuoLadderDropletModel.tex
 
 ## Citing this work
 
-See [`CITATION.cff`](CITATION.cff), or cite via the Zenodo DOI: [10.5281/zenodo.22717388](https://doi.org/10.5281/zenodo.22717388).
+See [`CITATION.cff`](CITATION.cff), or cite via the Zenodo concept DOI (always resolves to the
+latest version): [10.5281/zenodo.22717387](https://doi.org/10.5281/zenodo.22717387).
 
 ## License
 

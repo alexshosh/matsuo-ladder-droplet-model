@@ -11,9 +11,9 @@ type: article
 repository-code: "https://github.com/alexshosh/matsuo-ladder-droplet-model"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.22717388"
-    description: "Zenodo archive of this release"
-doi: "10.5281/zenodo.22717388"
+    value: "10.5281/zenodo.22717387"
+    description: "Zenodo concept DOI (always resolves to the latest version)"
+doi: "10.5281/zenodo.22717387"
 keywords:
   - origin of life
   - prebiotic chemistry
