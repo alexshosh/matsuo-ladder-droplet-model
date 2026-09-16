@@ -8,7 +8,8 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 
-\title{\textbf{A Mechanistic Model of Droplet Formation in Matsuo's Peptide-Coacervate System}}
+\title{\textbf{A Mechanistic Kinetic Model of Peptide Oligomerization and Droplet Formation in
+the Matsuo--Kurihara System}}
 \author{Alex Shoshitaishvili}
 \date{September 2026}
 
@@ -32,7 +33,7 @@ oligomerization stage reproduces every one of them with a single shared set of r
 ($R^2=0.990$--$0.996$); a separate, genuinely held-out test --- fitting the $25$~mM data alone
 under the naive assumption that DTT enters at first order, then predicting the $13$~mM curve
 with zero new parameters --- gives $R^2=0.61$, which the joint fit above resolves by
-identifying a DTT reaction order of $p\approx2.37$ instead.
+identifying an effective DTT reaction order of $p\approx2.37$ instead.
 The droplet-formation stage reproduces the full rise-peak-decline shape of the
 droplet-conversion curve essentially exactly ($R^2=0.9997$).
 \end{abstract}
@@ -89,15 +90,17 @@ before and after BnSH is incorporated into a droplet.
 \textbf{Source Data, not digitization.} Every fit in this note uses the paper's own exact
 Source Data spreadsheets for Fig.~3b--d (provided via its Data Availability statement, fetched
 directly since the article page itself blocks automated access), not values read off a figure
-image. A real error in the Source Data file itself was found and corrected:
-\textbf{the Fig.~3d column headers for $25$~mM and $13$~mM DTT are swapped relative to the
-data they actually label.} The column headed ``$25$'' decays \emph{more slowly} than the
-column headed ``$13$'', which is chemically backwards --- more DTT should reduce
+image. A likely error in the Source Data file itself was found and corrected (not confirmed
+by the original authors, but supported by an exact match described below):
+\textbf{the Fig.~3d column headers for $25$~mM and $13$~mM DTT appear to be swapped relative
+to the data they actually label.} The column headed ``$25$'' decays \emph{more slowly} than
+the column headed ``$13$'', which is chemically backwards --- more DTT should reduce
 $M_{\mathrm{pre}}$ faster, not slower. Direct comparison against Fig.~3c's own dedicated (and
 unambiguous, per the paper's caption) $25$~mM series confirms it: the column headed ``$13$''
 matches Fig.~3c's real $25$~mM curve exactly (to machine precision) at every overlapping
 timepoint, while the column headed ``$25$'' is a genuinely different, independent,
-slower-decaying curve. This note uses the corrected labels throughout; the true $13$~mM curve
+slower-decaying curve. This note uses the assignment supported by that exact match throughout;
+the true $13$~mM curve
 (headed ``$25$'' in the source file) is the real held-out curve used in
 \S\ref{sec:ladder-fit}, with $10$ points spanning the full $24$~h rather than $6$.
 
@@ -182,7 +185,7 @@ $N$ & max.\ tracked chain length & fixed (chosen) & $12$\\
 $k_0$ & $M_{\mathrm{pre}}$ reduction rate & fit, jointly, 3 curves & $0.00099$\\
 $k_1$ & nucleation rate & fit, jointly & $1.145$\\
 $k_{\mathrm{el}}$ & elongation rate (shared) & fit, jointly & $3.229$\\
-$p$ & DTT reaction order & fit, jointly \emph{only} & $2.37$\\
+$p$ & effective DTT reaction order & fit, jointly \emph{only} & $2.37$\\
 \multicolumn{4}{l}{\emph{Stage 2 --- droplet formation (\S\ref{sec:model-droplet})}}\\
 $S(t)$ & available oligomer/BnSH & computed from Stage 1 & --- (not fit)\\
 $Y$ & scale factor & fit, to $q(t)$ alone & $3.94$\\
@@ -227,9 +230,10 @@ $13$~mM DTT (Fig.~3d, corrected col., $0$--$24$~h) & $2.54$ & $0.990$\\
 \bottomrule
 \end{tabular}
 \end{center}
-One shared mechanism fits all three curves well --- the DTT-reduction step $R_0$ is close to
-second-order in DTT concentration ($p=2.37$), not first-order as the initial mass-action guess
-assumed. This is the model's
+One shared mechanism fits all three curves well --- the DTT-reduction step $R_0$ has an
+effective DTT reaction order of $p=2.37$ within this model, well above the naive first-order
+guess. (This is an effective, fitted exponent, not a claim about the elementary reaction's true
+molecularity.) This is the model's
 strongest result: $p$ is only identifiable at all once a second DTT
 condition forces it to be, and once identified, it genuinely predicts that condition rather
 than merely fitting it after the fact. The naive $p=1$ single-condition fit
@@ -347,7 +351,8 @@ a predictive model for Stage~2 needs data from one of two experiments.
 Run the same NMR conversion-to-droplet measurement at a different DTT concentration (e.g.\
 $13$~mM instead of $25$~mM). The model, fit to the $25$~mM curve alone as it already is, would
 then be used to predict the $13$~mM curve with zero new parameters --- the same test that
-already validated Stage~1's DTT reaction order. A successful prediction completes the model.
+already validated Stage~1's effective DTT reaction order. A successful prediction completes the
+model.
 
 \textbf{Experiment 2: a direct, parallel measurement of whatever drives the decline.} Run a
 redox/thiol assay alongside the existing droplet measurement, sampled at several times across
@@ -397,7 +402,7 @@ being mathematically identical to \eqref{eq:matsuo-fit}.
 & Matsuo \& Kurihara (Suppl.\ Fig.~14) & This note (Stage~2, \S\ref{sec:droplet-fit})\\
 \midrule
 Data & primary NMR, $n=3$, error bars, D$_2$O replicate run & Source Data, Fig.~3c, water, $0$--$24$~h\\[2pt]
-Curve family & Richards (unnamed as such) & Richards-driven Avrami (\S\ref{sec:model-droplet})\\[2pt]
+Curve family & Richards (unnamed as such) & drifting-target $\times$ Avrami response (\S\ref{sec:model-droplet})\\[2pt]
 Fit quality & $R^2=0.99987$ (own data) & $R^2=0.9997$ (own data)\\[2pt]
 Connected to upstream chemistry? & no --- $q(t)$ fit alone & yes --- driven by Stage~1's $S(t)$\\[2pt]
 Tested against held-out data? & not reported & not for Stage~2 either (\S\ref{sec:droplet-held-out})\\
@@ -420,11 +425,12 @@ account of $M_{\mathrm{pre}}$-reduction and oligomerization for this system: exp
 for $M_{\mathrm{pre}}$ reduction, nucleation, and elongation, with chain length tracked
 explicitly ($p_2,\ldots,p_N$), not lumped into one undifferentiated ``oligomer'' pool.
 
-\textbf{2. A DTT reaction order.} This note determines it
-directly: $p\approx2.37$, close to second order, not the first-order guess a naive mass-action
+\textbf{2. An effective DTT reaction order.} This note determines it
+directly: $p\approx2.37$, well above the first-order guess a naive mass-action
 model would start from (\S\ref{sec:ladder-fit}) --- a concrete, checkable claim about the
-reaction mechanism, made possible by fitting a rate law to the oligomerization data in the
-first place.
+fitted rate law's DTT dependence, made possible by fitting a rate law to the oligomerization
+data in the first place, though not by itself a claim about the elementary reaction's true
+molecularity.
 
 \textbf{3. Cross-condition discrimination of the kinetic law.}
 A model fit at $25$~mM under the naive assumption $p=1$ predicts the independent $13$~mM
@@ -432,7 +438,7 @@ condition only moderately ($R^2=0.61$, \S\ref{sec:ladder-fit}). Joint use of bot
 conditions identifies $p\approx2.37$ instead, after which one shared kinetic mechanism
 reproduces both concentrations with $R^2\approx0.99$. The second condition does not merely
 supply another curve to fit --- it discriminates between alternative DTT dependences and
-identifies the reaction order.
+identifies the effective reaction order.
 
 \textbf{4. The two observed curves connected through one mechanism, not fit in isolation.}
 This note's Stage~2 uses $S(t)$ --- the oligomer/BnSH pool, computed directly from Stage~1's
@@ -454,8 +460,8 @@ trajectory ($25\to15$~mM over $24$~h, not yet checked against any direct measure
 real, falsifiable outputs of Stage~1's internal state --- genuine physical quantities, not just
 curve-shape parameters.
 
-None of the above applies to Stage~2 itself (data limitations,
-see again \S\ref{sec:droplet-held-out}--\S\ref{sec:structural-limit}).
+The predictive validation established for Stage~1 does not yet extend to Stage~2 itself (data
+limitations, see again \S\ref{sec:droplet-held-out}--\S\ref{sec:structural-limit}).
 
 \begin{thebibliography}{9}
 \small

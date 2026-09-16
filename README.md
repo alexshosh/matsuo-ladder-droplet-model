@@ -1,4 +1,4 @@
-# A Mechanistic Model of Droplet Formation in Matsuo's Peptide-Coacervate System
+# A Mechanistic Kinetic Model of Peptide Oligomerization and Droplet Formation in the Matsuo–Kurihara System
 
 Alex Shoshitaishvili, Independent Researcher
 
